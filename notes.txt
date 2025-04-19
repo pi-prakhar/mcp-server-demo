@@ -5,3 +5,19 @@ Stock (INR):
 Stock (INR): ₹231.60
 Eternal Ltd (formerly Zomato) is currently trading at ₹231.60 per share on the NSE with a 4.29% increase (+₹9.52) today (April 17, 2025). The stock has a 52-week range of ₹146.30 to ₹304.70. The company has a market capitalization of approximately ₹2.14 lakh crore and operates in the online services sector, primarily connecting customers, restaurant partners, and delivery partners through its food delivery and quick commerce (Blinkit) businesses.
 HDFC Bank : ₹1,652.45
+To make the `NOTES_FILE` path more universal and work relative to the location of `main.py`, modify the current hardcoded path:
+
+```python
+NOTES_FILE = "/Users/prakhar/Documents/personal-projects/MCP/mcp-server-demo/notes.txt"
+```
+
+For better portability, change it to use a path relative to the script itself:
+
+```python
+import os
+
+# Define notes file path relative to main.py location
+NOTES_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "notes.txt")
+```
+
+This ensures the notes file will be created in the same directory as the `main.py` script, making the application more portable across different systems and installations.

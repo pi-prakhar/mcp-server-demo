@@ -22,7 +22,7 @@ import os
 
 mcp = FastMCP("AI sticky notes")
 
-NOTES_FILE = "/Users/prakhar/Documents/personal-projects/MCP/mcp-server-demo/notes.txt"
+NOTES_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "notes.txt")
 
 def ensure_file():
     if not os.path.exists(NOTES_FILE):
